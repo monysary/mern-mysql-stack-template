@@ -37,18 +37,21 @@ function Register() {
         <input
           type="text"
           name="name"
+          placeholder="name"
           value={formState.name}
           onChange={handleInputChange}
         />
         <input
           type="email"
           name="email"
+          placeholder="email"
           value={formState.email}
           onChange={handleInputChange}
         />
         <input
           type="password"
           name="password"
+          placeholder="password"
           value={formState.password}
           onChange={handleInputChange}
         />

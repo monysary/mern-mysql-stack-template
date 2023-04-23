@@ -12,17 +12,16 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
 
-// if (process.env.NODE_ENV === 'production') {
-//     app.use(express.static(join('client', 'build')));
-    
-// } else {
-//     app.get('/', (req, res) => {
-//         res.sendFile(join(__dirname, '..', 'client', 'build', 'index.html'))
-//     });
-// }
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(join('client', 'build')));
 
-sequelize.sync({ force: true }).then(() => {
-    app.listen(PORT, () => {
-        console.log(`App listening on http://localhost:${PORT}/`);
+} else {
+    app.get('/', (req, res) => {
+        res.sendFile(join(__dirname, '..', 'client', 'build', 'index.html'))
     });
+}
+
+app.listen(PORT, () => {
+    console.log(`App listening on http://localhost:${PORT}/`);
+    sequelize.sync({ force: false });
 });

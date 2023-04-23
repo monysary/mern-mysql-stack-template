@@ -1,5 +1,5 @@
 -- DROP DATABASE
-DROP DATABASE IF EXISTS --name_of_database;
+DROP DATABASE IF EXISTS db_name;
 
 -- CREATE DATABASE
-CREATE DATABASE --name_of_database;
+CREATE DATABASE db_name;
