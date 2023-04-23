@@ -1,3 +1,8 @@
+const User = require('./User');
+
+// Set up database relationships here
+
+
 module.exports = {
-  User: require("./User.js"),
+  User
 };
